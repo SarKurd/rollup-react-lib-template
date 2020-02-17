@@ -1,9 +1,14 @@
 {
     "name": "rollup-react-lib-template",
     "version": "0.0.0",
-    "main": "src/index.js",
     "author": "SarKurd <sarbast2030@gmail.com>",
     "license": "MIT",
+    "main": "dist/bundle.cjs.js",
+    "module": "dist/bundle.ems.js",
+    "sideEffects": false,
+    "engines": {
+        "node": ">=8"
+    },
     "scripts": {
         "prebuild": "rimraf dist",
         "build": "rollup -c",
