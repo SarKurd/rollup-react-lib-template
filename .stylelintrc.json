@@ -1,0 +1,82 @@
+{
+    "extends": "stylelint-config-standard",
+    "rules": {
+        "declaration-block-no-duplicate-properties": true,
+        "indentation": 4,
+        "block-closing-brace-empty-line-before": "never",
+        "declaration-block-semicolon-newline-after": "always",
+        "declaration-colon-space-after": "always",
+        "no-duplicate-selectors": true,
+        "order/properties-order": [
+            {
+                "description": "Positioning",
+                "order": "flexible",
+                "properties": ["position", "z-index", "top", "right", "bottom", "left"]
+            },
+            {
+                "description": "Display & Box Model",
+                "order": "flexible",
+                "properties": [
+                    "display",
+                    "overflow",
+                    "box-sizing",
+                    "width",
+                    "max-width",
+                    "min-width",
+                    "height",
+                    "max-height",
+                    "min-height",
+                    "padding",
+                    "border",
+                    "margin"
+                ]
+            },
+            {
+                "description": "Flex Container(Parent)",
+                "order": "flexible",
+                "properties": [
+                    "flex-flow",
+                    "flex-direction",
+                    "flex-wrap",
+                    "justify-content",
+                    "align-items",
+                    "align-content"
+                ]
+            },
+            {
+                "description": "Flex Item(Children)",
+                "order": "flexible",
+                "properties": [
+                    "flex",
+                    "flex-grow",
+                    "flex-shrink",
+                    "flex-basis",
+                    "order",
+                    "align-self"
+                ]
+            },
+            {
+                "description": "Color",
+                "order": "flexible",
+                "properties": ["background", "background-image", "color", "box-shadow"]
+            },
+            {
+                "description": "Text",
+                "order": "flexible",
+                "properties": [
+                    "font-family",
+                    "font-size",
+                    "font-weight",
+                    "line-height",
+                    "text-align",
+                    "text-transform"
+                ]
+            },
+            {
+                "description": "Other",
+                "order": "flexible",
+                "properties": ["content", "cursor"]
+            }
+        ]
+    }
+}

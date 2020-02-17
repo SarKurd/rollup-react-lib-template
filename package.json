@@ -5,8 +5,15 @@
     "author": "SarKurd <sarbast2030@gmail.com>",
     "license": "MIT",
     "scripts": {
-        "lint": "eslint '**/*.js'",
-        "lint:fix": "prettier-eslint $PWD/'**/*.js' --write"
+        "lint:css:all:fix": "npm run lint:css:all -- --fix",
+        "lint:css:all": "npm run lint:css -- $PWD/'**/*.css'",
+        "lint:css:fix": "npm run lint:css -- --fix",
+        "lint:css": "stylelint",
+        "lint:js:all:fix": "npm run lint:js:fix -- $PWD/'**/*.js'",
+        "lint:js:all": "npm run lint:js -- $PWD/'**/*.js'",
+        "lint:js:fix": "prettier-eslint --write",
+        "lint:js": "eslint",
+        "lint": "npm run lint:js:all && npm run lint:css:all"
     },
     "devDependencies": {
         "eslint": "^6.8.0",
@@ -16,8 +23,29 @@
         "eslint-plugin-jsx-a11y": "^6.2.3",
         "eslint-plugin-react": "^7.18.3",
         "eslint-plugin-react-hooks": "^1.7.0",
+        "husky": "^4.2.3",
+        "lint-staged": "^10.0.7",
         "prettier-eslint": "^9.0.1",
-        "prettier-eslint-cli": "^5.0.0"
+        "prettier-eslint-cli": "^5.0.0",
+        "stylelint": "^13.2.0",
+        "stylelint-config-standard": "^20.0.0"
+    },
+    "husky": {
+        "hooks": {
+            "pre-commit": "lint-staged"
+        }
+    },
+    "lint-staged": {
+        "*.css": [
+            "npm run lint:css:fix",
+            "npm run lint:css",
+            "git add"
+        ],
+        "*.js": [
+            "npm run lint:js:fix",
+            "npm run lint:js",
+            "git add"
+        ]
     },
     "repository": {
         "url": "git+https://github.com:SarKurd/react-ui.git"
