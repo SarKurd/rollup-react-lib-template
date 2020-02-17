@@ -1,5 +1,5 @@
 function add(x, y) {
     return x + y;
 }
-
-add(5, 3);
+const z = add(9, 5);
+console.log(z);
