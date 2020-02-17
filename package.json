@@ -1,7 +1,7 @@
 {
-    "name": "@sarkurd/react-ui",
+    "name": "rollup-react-lib-template",
     "version": "0.0.0",
-    "main": "index.js",
+    "main": "src/index.js",
     "author": "SarKurd <sarbast2030@gmail.com>",
     "license": "MIT",
     "scripts": {
@@ -65,13 +65,13 @@
         ]
     },
     "repository": {
-        "url": "https://github.com/SarKurd/react-ui.git"
+        "url": "https://github.com/SarKurd/rollup-react-lib-template.git"
     },
     "bugs": {
         "type": "git",
-        "url": "https://github.com/SarKurd/react-ui.git/issues"
+        "url": "https://github.com/SarKurd/rollup-react-lib-template.git/issues"
     },
-    "homepage": "https://github.com/SarKurd/react-ui.git#readme",
+    "homepage": "https://github.com/SarKurd/rollup-react-lib-template.git#readme",
     "keywords": [
         "react"
     ]
