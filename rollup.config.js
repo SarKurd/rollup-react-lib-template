@@ -1,9 +1,9 @@
 import resolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
 import { terser } from 'rollup-plugin-terser';
+import babel from 'rollup-plugin-babel';
+import filesize from 'rollup-plugin-filesize';
 
-// `npm run build` -> `production` is true
-// `npm run dev` -> `production` is false
 const production = !process.env.ROLLUP_WATCH;
 
 export default {
@@ -20,10 +20,23 @@ export default {
             sourcemap: true,
         },
         {
+            name: 'reactUi',
             file: 'dist/bundle.umd.js',
             format: 'umd',
+            globals: {
+                react: 'React',
+            },
             sourcemap: true,
         },
     ],
-    plugins: [resolve(), commonjs(), production && terser()],
+    external: ['react'],
+    plugins: [
+        resolve(),
+        babel({
+            exclude: 'node_modules/**',
+        }),
+        commonjs(),
+        production && terser(),
+        filesize(),
+    ],
 };
