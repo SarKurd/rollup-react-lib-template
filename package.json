@@ -4,7 +4,7 @@
     "author": "SarKurd <sarbast2030@gmail.com>",
     "license": "MIT",
     "main": "dist/bundle.cjs.js",
-    "module": "dist/bundle.ems.js",
+    "module": "dist/bundle.esm.js",
     "sideEffects": false,
     "engines": {
         "node": ">=8"
